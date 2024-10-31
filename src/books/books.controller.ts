@@ -22,7 +22,7 @@ export class BooksController {
     return this.booksService.create(createBookDto);
   }
 
-  @Patch(':isbn')
+  @Patch(':isbn') //actualizar
   async update(@Param('isbn') isbn: string, @Body() updateBookDto: UpdateBookDto) {
     return this.booksService.update(isbn, updateBookDto);
   }
