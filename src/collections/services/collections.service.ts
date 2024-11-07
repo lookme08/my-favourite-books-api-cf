@@ -2,9 +2,9 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Collection } from './collection.entity';
-import { Book } from '../books/book.entity';
-import { CreateCollectionDto } from './dto/create-collection.dto';
-import { UpdateCollectionDto } from './dto/update-collection.dto';
+import { Book } from '../../books/entities/book.entity';
+import { CreateCollectionDto } from '../dto/create-collection.dto';
+import { UpdateCollectionDto } from '../dto/update-collection.dto';
 
 @Injectable()
 export class CollectionsService {

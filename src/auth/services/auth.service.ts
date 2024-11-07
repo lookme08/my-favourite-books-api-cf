@@ -7,7 +7,7 @@ export class AuthService {
 
   async login(email: string, password: string) {
     // Aquí  validar el usuario 
-    if (email === 'user@example.com' && password === 'password') {
+    if (email === 'cynthiaflores8088@gmail.com' && password === '123456789') {
       const payload = { email };
       return {
         access_token: this.jwtService.sign(payload),

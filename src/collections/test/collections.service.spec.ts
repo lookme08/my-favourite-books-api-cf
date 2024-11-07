@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CollectionsService } from './collections.service';
+import { CollectionsService } from '../services/collections.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Collection } from './collection.entity';
-import { Book } from '../books/book.entity';
+import { Book } from '../../books/entities/book.entity';
 import { Repository } from 'typeorm';
 
 describe('CollectionsService', () => {

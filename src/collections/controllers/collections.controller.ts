@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Patch, Delete, Param, Body } from '@nestjs/common';
-import { CollectionsService } from './collections.service';
-import { CreateCollectionDto } from './dto/create-collection.dto';
-import { UpdateCollectionDto } from './dto/update-collection.dto';
+import { CollectionsService } from '../services/collections.service';
+import { CreateCollectionDto } from '../dto/create-collection.dto';
+import { UpdateCollectionDto } from '../dto/update-collection.dto';
 
 @Controller('collections')
 export class CollectionsController {

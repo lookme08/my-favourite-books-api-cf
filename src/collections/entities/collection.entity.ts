@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable } from 'typeorm';
-import { Book } from '../books/book.entity';
+import { Book } from '../books/entities/book.entity';
 
 @Entity()
 export class Collection {

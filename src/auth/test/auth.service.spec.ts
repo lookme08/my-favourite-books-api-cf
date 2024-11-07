@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthController } from './auth.controller';
-import { AuthService } from './auth.service';
+import { AuthController } from '../controllers/auth.controller';
+import { AuthService } from '../services/auth.service';
 
 describe('AuthController', () => {
   let controller: AuthController;
@@ -13,8 +13,8 @@ describe('AuthController', () => {
         {
           provide: AuthService,
           useValue: {
-            login: jest.fn().mockResolvedValue({ access_token: 'test-token' }), // Mock del método login
-            register: jest.fn().mockResolvedValue({ message: 'User registered successfully' }), // Mock del método register
+            login: jest.fn().mockResolvedValue({ access_token: 'test-token' }),
+            register: jest.fn().mockResolvedValue({ message: 'User registered successfully' }),
           },
         },
       ],
@@ -38,5 +38,5 @@ describe('AuthController', () => {
     const result = await controller.register('test@example.com', 'password');
     expect(result).toEqual({ message: 'User registered successfully' });
     expect(service.register).toHaveBeenCalledWith('test@example.com', 'password');
-  });
+  })
 });

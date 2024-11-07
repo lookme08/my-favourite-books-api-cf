@@ -1,38 +1,37 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CollectionsController } from './collections.controller';
-import { CollectionsService } from './collections.service';
+import { BooksController } from '../controllers/books.controller';
+import { BooksService } from '../services/books.service';
 
-describe('CollectionsController', () => {
-  let controller: CollectionsController;
-  let service: CollectionsService;
+describe('BooksController', () => {
+  let controller: BooksController;
+  let service: BooksService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [CollectionsController],
+      controllers: [BooksController],
       providers: [
         {
-          provide: CollectionsService,
+          provide: BooksService,
           useValue: {
             findAll: jest.fn().mockResolvedValue([]),
             findOne: jest.fn().mockResolvedValue({}),
             create: jest.fn().mockResolvedValue({}),
             update: jest.fn().mockResolvedValue({}),
             remove: jest.fn().mockResolvedValue({}),
-            addBookToCollection: jest.fn().mockResolvedValue({}),
           },
         },
       ],
     }).compile();
 
-    controller = module.get<CollectionsController>(CollectionsController);
-    service = module.get<CollectionsService>(CollectionsService);
+    controller = module.get<BooksController>(BooksController);
+    service = module.get<BooksService>(BooksService);
   });
 
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
 
-  it('should return an array of collections', async () => {
+  it('should return an array of books', async () => {
     const result = await controller.findAll();
     expect(result).toBeInstanceOf(Array);
   });
